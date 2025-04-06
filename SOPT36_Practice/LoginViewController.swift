@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
         label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 2
-        label.font = .soptFont(.subhead1Bold)
+        label.font = .customFont(weight: .bold, size: 18)
         label.layer.cornerRadius = 3
         return label
     }()
