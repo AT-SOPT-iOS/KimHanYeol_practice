@@ -23,9 +23,9 @@ class LoginViewController: UIViewController {
     private let idTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 20, y: 276, width: 335, height: 52))
         textField.placeholder = "아이디"
-        textField.font = .systemFont(ofSize: 14)
+        textField.font = .customFont(weight: .regular, size: 14)
         textField.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 0))
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 0))
         textField.leftViewMode = .always
         textField.layer.cornerRadius = 3
         return textField
@@ -34,9 +34,9 @@ class LoginViewController: UIViewController {
     private let passwordTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 20, y: 335, width: 335, height: 52))
         textField.placeholder = "비밀번호"
-        textField.font = UIFont.systemFont(ofSize: 14)
+        textField.font = .customFont(weight: .regular, size: 14)
         textField.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 0))
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 0))
         textField.leftViewMode = .always
         textField.layer.cornerRadius = 3
         return textField
@@ -44,10 +44,10 @@ class LoginViewController: UIViewController {
     
     private lazy var loginButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 21, y: 422, width: 335, height: 57))
-        button.backgroundColor = UIColor(red: 255/255, green: 111/255, blue: 15/255, alpha: 1)
+        button.backgroundColor = .primaryOrange
         button.setTitle("로그인하기", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.titleLabel?.font = .customFont(weight: .bold, size: 18)
         button.addTarget(self, action: #selector(loginButtonDidTapped), for: .touchUpInside)
         button.layer.cornerRadius = 6
         return button
@@ -57,10 +57,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
-        setLayout()
+        setUI()
     }
     
-    private func setLayout() {
+    private func setUI() {
         [titleLabel, idTextField, passwordTextField, loginButton].forEach {
             self.view.addSubview($0)
         }
@@ -68,21 +68,21 @@ class LoginViewController: UIViewController {
     
     @objc
     func loginButtonDidTapped() {
-//        presentToWelcomeVC()
+        //        presentToWelcomeVC()
         pushToWelcomeVC()
     }
     
     private func presentToWelcomeVC() {
         let welcomeViewController = WelcomeViewController()
         welcomeViewController.modalPresentationStyle = .formSheet
-    //        welcomeViewController.id = idTextField.text
+        //        welcomeViewController.id = idTextField.text
         welcomeViewController.setLabelText(id: idTextField.text)
         self.present(welcomeViewController, animated: true)
     }
-
+    
     private func pushToWelcomeVC() {
         let welcomeViewController = WelcomeViewController()
-    //        welcomeViewController.id = idTextField.text
+        //        welcomeViewController.id = idTextField.text
         welcomeViewController.setLabelText(id: idTextField.text)
         self.navigationController?.pushViewController(welcomeViewController, animated: true)
     }
