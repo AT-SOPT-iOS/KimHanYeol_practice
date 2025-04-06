@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
         label.textAlignment = .center
         label.numberOfLines = 2
         label.font = .boldSystemFont(ofSize: 16)
+        label.layer.cornerRadius = 3
         return label
     }()
     
@@ -26,6 +27,7 @@ class LoginViewController: UIViewController {
         textField.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 0))
         textField.leftViewMode = .always
+        textField.layer.cornerRadius = 3
         return textField
     }()
     
@@ -36,6 +38,7 @@ class LoginViewController: UIViewController {
         textField.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 0))
         textField.leftViewMode = .always
+        textField.layer.cornerRadius = 3
         return textField
     }()
     

@@ -25,6 +25,7 @@ class WelcomeViewController: UIViewController {
         label.textAlignment = .center
         label.numberOfLines = 2
         label.font = .boldSystemFont(ofSize: 16)
+        label.layer.cornerRadius = 3
         return label
     }()
     
