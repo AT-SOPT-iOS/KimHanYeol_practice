@@ -61,9 +61,7 @@ class LoginViewController: UIViewController {
     }
     
     private func setUI() {
-        [titleLabel, idTextField, passwordTextField, loginButton].forEach {
-            self.view.addSubview($0)
-        }
+        self.view.addSubviews(titleLabel, idTextField, passwordTextField, loginButton)
     }
     
     @objc

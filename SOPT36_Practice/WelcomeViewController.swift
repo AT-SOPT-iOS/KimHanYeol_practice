@@ -56,9 +56,7 @@ class WelcomeViewController: UIViewController {
     }
     
     private func setUI() {
-        [imageView, welcomeLabel, mainButton, backButton].forEach {
-            self.view.addSubview($0)
-        }
+        self.view.addSubviews(imageView, welcomeLabel, mainButton, backButton)
     }
     
     private func bindID() {
