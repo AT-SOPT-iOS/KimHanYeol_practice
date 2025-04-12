@@ -1,5 +1,5 @@
 //
-//  WelcomeViewController.swift
+//  WelcomeViewController_DelegatePattern.swift
 //  SOPT36_Practice
 //
 //  Created by OneTen on 4/7/25.
@@ -7,7 +7,11 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+protocol DataBindDelegate: AnyObject {
+    func databind(id: String)
+}
+
+class WelcomeViewController_DelegatePattern: UIViewController {
     var id: String?
     
     private let imageView: UIImageView = {

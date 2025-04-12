@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  LoginViewController_DelegatePattern.swift
 //  SOPT36_Practice
 //
 //  Created by OneTen on 4/7/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController_DelegatePattern: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 69, y: 161, width: 236, height: 44))
@@ -71,7 +71,7 @@ class LoginViewController: UIViewController {
     }
     
     private func presentToWelcomeVC() {
-        let welcomeViewController = WelcomeViewController()
+        let welcomeViewController = WelcomeViewController_DelegatePattern()
         welcomeViewController.modalPresentationStyle = .formSheet
         //        welcomeViewController.id = idTextField.text
         welcomeViewController.setLabelText(id: idTextField.text)
@@ -79,7 +79,7 @@ class LoginViewController: UIViewController {
     }
     
     private func pushToWelcomeVC() {
-        let welcomeViewController = WelcomeViewController()
+        let welcomeViewController = WelcomeViewController_DelegatePattern()
         //        welcomeViewController.id = idTextField.text
         welcomeViewController.setLabelText(id: idTextField.text)
         self.navigationController?.pushViewController(welcomeViewController, animated: true)
