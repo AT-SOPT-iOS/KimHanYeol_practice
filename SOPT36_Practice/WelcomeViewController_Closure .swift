@@ -1,19 +1,16 @@
 //
-//  WelcomeViewController_DelegatePattern.swift
+//  WelcomeViewController_Closure .swift
 //  SOPT36_Practice
 //
-//  Created by OneTen on 4/7/25.
+//  Created by OneTen on 4/12/25.
 //
 
 import UIKit
 
-protocol DataBindDelegate: AnyObject {
-    func databind(id: String)
-}
-
-class WelcomeViewController_DelegatePattern: UIViewController {
-    weak var delegate: DataBindDelegate?
+class WelcomeViewController_Closure: UIViewController {
     var id: String?
+    
+    var loginDataCompletion: ((String) -> Void)?
     
     private let imageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(resource: .carrotIcon))
@@ -75,8 +72,9 @@ class WelcomeViewController_DelegatePattern: UIViewController {
     @objc
     private func backToLoginButtonDidTap() {
         
+        guard let loginDataCompletion else { return }
         if let id = id {
-            delegate?.databind(id: id)
+            loginDataCompletion(id)
         }
         
         if self.navigationController == nil {
