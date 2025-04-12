@@ -73,17 +73,22 @@ class LoginViewController_DelegatePattern: UIViewController {
     private func presentToWelcomeVC() {
         let welcomeViewController = WelcomeViewController_DelegatePattern()
         welcomeViewController.modalPresentationStyle = .formSheet
-        //        welcomeViewController.id = idTextField.text
         welcomeViewController.setLabelText(id: idTextField.text)
         self.present(welcomeViewController, animated: true)
     }
     
     private func pushToWelcomeVC() {
         let welcomeViewController = WelcomeViewController_DelegatePattern()
-        //        welcomeViewController.id = idTextField.text
+        welcomeViewController.delegate = self
         welcomeViewController.setLabelText(id: idTextField.text)
         self.navigationController?.pushViewController(welcomeViewController, animated: true)
     }
     
     
+}
+
+extension LoginViewController_DelegatePattern: DataBindDelegate {
+    func databind(id: String) {
+        idTextField.text = id
+    }
 }
