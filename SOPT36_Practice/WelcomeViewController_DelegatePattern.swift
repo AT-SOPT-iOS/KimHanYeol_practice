@@ -1,5 +1,5 @@
 //
-//  WelcomeViewController.swift
+//  WelcomeViewController_DelegatePattern.swift
 //  SOPT36_Practice
 //
 //  Created by OneTen on 4/7/25.
@@ -7,7 +7,12 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+protocol DataBindDelegate: AnyObject {
+    func databind(id: String)
+}
+
+class WelcomeViewController_DelegatePattern: UIViewController {
+    weak var delegate: DataBindDelegate?
     var id: String?
     
     private let imageView: UIImageView = {
@@ -59,16 +64,21 @@ class WelcomeViewController: UIViewController {
         self.view.addSubviews(imageView, welcomeLabel, mainButton, backButton)
     }
     
-    private func bindID() {
-        self.welcomeLabel.text = "\(id!)님 \n반가워요!"
-    }
-    
     func setLabelText(id: String?) {
         self.id = id
     }
     
+    private func bindID() {
+        self.welcomeLabel.text = "\(id!)님 \n반가워요!"
+    }
+    
     @objc
     private func backToLoginButtonDidTap() {
+        
+        if let id = id {
+            delegate?.databind(id: id)
+        }
+        
         if self.navigationController == nil {
             self.dismiss(animated: true)
         } else {
