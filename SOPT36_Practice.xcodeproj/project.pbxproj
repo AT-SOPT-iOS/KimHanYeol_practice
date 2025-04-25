@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C0CC6FA2DBBD7D700C12320 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 6C0CC6F92DBBD7D700C12320 /* Then */; };
 		6C61CF442DA9478E00F1FEF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C61CF302DA9478E00F1FEF4 /* AppDelegate.swift */; };
 		6C61CF452DA9478E00F1FEF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C61CF312DA9478E00F1FEF4 /* SceneDelegate.swift */; };
 		6C61CF462DA9478E00F1FEF4 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C61CF332DA9478E00F1FEF4 /* UIFont+.swift */; };
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C0CC6FA2DBBD7D700C12320 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,7 @@
 			);
 			name = SOPT36_Practice;
 			packageProductDependencies = (
+				6C0CC6F92DBBD7D700C12320 /* Then */,
 			);
 			productName = SOPT36_Practice;
 			productReference = 6C562C402DA2CDFE00CC313C /* SOPT36_Practice.app */;
@@ -172,6 +175,9 @@
 			);
 			mainGroup = 6C562C372DA2CDFE00CC313C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6C0CC6F82DBBD7D700C12320 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6C562C412DA2CDFE00CC313C /* Products */;
 			projectDirPath = "";
@@ -426,6 +432,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6C0CC6F82DBBD7D700C12320 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6C0CC6F92DBBD7D700C12320 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6C0CC6F82DBBD7D700C12320 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6C562C382DA2CDFE00CC313C /* Project object */;
 }
