@@ -28,6 +28,13 @@
 		6C71E5B62DBCBFE60026D9CF /* ItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C71E5B52DBCBFE60026D9CF /* ItemCollectionViewController.swift */; };
 		6C71E5B82DBCC6210026D9CF /* itemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C71E5B72DBCC6210026D9CF /* itemCollectionViewCell.swift */; };
 		6C71E5BA2DBCC67B0026D9CF /* itemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C71E5B92DBCC67B0026D9CF /* itemModel.swift */; };
+		6CF689232DC5E30000BC63AD /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF689222DC5E30000BC63AD /* NetworkViewController.swift */; };
+		6CF6892D2DC5EA8700BC63AD /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6892C2DC5EA8700BC63AD /* NetworkError.swift */; };
+		6CF6892F2DC5EABE00BC63AD /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6892E2DC5EABE00BC63AD /* RegisterRequest.swift */; };
+		6CF689312DC5EAC900BC63AD /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF689302DC5EAC900BC63AD /* RegisterResponse.swift */; };
+		6CF689332DC5EBB600BC63AD /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF689322DC5EBB600BC63AD /* RegisterService.swift */; };
+		6CF689352DC5FB2500BC63AD /* GetInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF689342DC5FB2500BC63AD /* GetInfoService.swift */; };
+		6CF689372DC5FB7000BC63AD /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF689362DC5FB7000BC63AD /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +59,13 @@
 		6C71E5B52DBCBFE60026D9CF /* ItemCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewController.swift; sourceTree = "<group>"; };
 		6C71E5B72DBCC6210026D9CF /* itemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemCollectionViewCell.swift; sourceTree = "<group>"; };
 		6C71E5B92DBCC67B0026D9CF /* itemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemModel.swift; sourceTree = "<group>"; };
+		6CF689222DC5E30000BC63AD /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
+		6CF6892C2DC5EA8700BC63AD /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		6CF6892E2DC5EABE00BC63AD /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		6CF689302DC5EAC900BC63AD /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		6CF689322DC5EBB600BC63AD /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		6CF689342DC5FB2500BC63AD /* GetInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoService.swift; sourceTree = "<group>"; };
+		6CF689362DC5FB7000BC63AD /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +144,7 @@
 			children = (
 				6C61CF322DA9478E00F1FEF4 /* Application */,
 				6C61CF352DA9478E00F1FEF4 /* Extensions */,
+				6CF6892B2DC5E91E00BC63AD /* Network */,
 				6C61CF3C2DA9478E00F1FEF4 /* Resources */,
 				6C61CF3D2DA9478E00F1FEF4 /* Info.plist */,
 				6C61CF412DA9478E00F1FEF4 /* ViewController.swift */,
@@ -138,8 +153,46 @@
 				6C71E5B52DBCBFE60026D9CF /* ItemCollectionViewController.swift */,
 				6C71E5B72DBCC6210026D9CF /* itemCollectionViewCell.swift */,
 				6C71E5B92DBCC67B0026D9CF /* itemModel.swift */,
+				6CF689222DC5E30000BC63AD /* NetworkViewController.swift */,
+				6CF689362DC5FB7000BC63AD /* InfoViewController.swift */,
 			);
 			path = SOPT36_Practice;
+			sourceTree = "<group>";
+		};
+		6CF689272DC5E80F00BC63AD /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				6CF6892E2DC5EABE00BC63AD /* RegisterRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		6CF689282DC5E80F00BC63AD /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				6CF689302DC5EAC900BC63AD /* RegisterResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		6CF689292DC5E80F00BC63AD /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				6CF689272DC5E80F00BC63AD /* Request */,
+				6CF689282DC5E80F00BC63AD /* Response */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		6CF6892B2DC5E91E00BC63AD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6CF689292DC5E80F00BC63AD /* DTO */,
+				6CF6892C2DC5EA8700BC63AD /* NetworkError.swift */,
+				6CF689322DC5EBB600BC63AD /* RegisterService.swift */,
+				6CF689342DC5FB2500BC63AD /* GetInfoService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,14 +283,21 @@
 				6C71E5B82DBCC6210026D9CF /* itemCollectionViewCell.swift in Sources */,
 				6C61CF452DA9478E00F1FEF4 /* SceneDelegate.swift in Sources */,
 				6C61CF462DA9478E00F1FEF4 /* UIFont+.swift in Sources */,
+				6CF689232DC5E30000BC63AD /* NetworkViewController.swift in Sources */,
+				6CF689332DC5EBB600BC63AD /* RegisterService.swift in Sources */,
 				6C71E5B22DBCA7C00026D9CF /* ChatTableViewCell.swift in Sources */,
 				6C71E5A92DBBD8300026D9CF /* UICollectionViewCell+.swift in Sources */,
+				6CF689352DC5FB2500BC63AD /* GetInfoService.swift in Sources */,
 				6C71E5B42DBCAF8F0026D9CF /* ChatModel.swift in Sources */,
+				6CF6892D2DC5EA8700BC63AD /* NetworkError.swift in Sources */,
 				6C61CF472DA9478E00F1FEF4 /* UIView+.swift in Sources */,
 				6C61CF492DA9478E00F1FEF4 /* ViewController.swift in Sources */,
+				6CF689372DC5FB7000BC63AD /* InfoViewController.swift in Sources */,
 				6C71E5AD2DBBD8B50026D9CF /* UITableViewCell+.swift in Sources */,
 				6C71E5AB2DBBD8820026D9CF /* UITextField+.swift in Sources */,
+				6CF6892F2DC5EABE00BC63AD /* RegisterRequest.swift in Sources */,
 				6C71E5B62DBCBFE60026D9CF /* ItemCollectionViewController.swift in Sources */,
+				6CF689312DC5EAC900BC63AD /* RegisterResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
