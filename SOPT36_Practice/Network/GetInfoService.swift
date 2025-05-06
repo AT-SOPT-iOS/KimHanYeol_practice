@@ -28,6 +28,25 @@ class GetInfoService {
         return request
     }
     
+    func makeMeRequest(userId: Int) -> URLRequest? {
+        let urlString = "http://api.atsopt-seminar4.site/api/v1/users/me"
+
+        guard let url = URL(string: urlString) else { return nil }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        let header = ["Content-Type": "application/json"]
+        let header2 = ["userId": "\(userId)"]
+        header.forEach {
+            request.addValue($0.value, forHTTPHeaderField: $0.key)
+        }
+        header2.forEach {
+            request.addValue($0.value, forHTTPHeaderField: $0.key)
+        }
+        
+        return request
+    }
+    
     func fetchNicknameList(keyword: String?) async throws -> [String] {
         guard let request = makeRequest(keyword: keyword) else {
             throw NetworkError.requestEncodingError
@@ -47,8 +66,31 @@ class GetInfoService {
             print("디코딩 실패")
             throw NetworkError.responseDecodingError
         }
+    }
+    
+    func fetchMyNickname(userId: Int) async throws -> String {
+        guard let request = makeMeRequest(userId: userId) else {
+            throw NetworkError.requestEncodingError
+        }
+        let (data, response) = try await URLSession.shared.data(for: request)
         
+        guard let httpResponse = response as? HTTPURLResponse,
+              (200...299).contains(httpResponse.statusCode)
+        else {
+            throw NetworkError.responseError
+        }
         
+        do {
+            let decode = try JSONDecoder().decode(MyNicknameListResponseWrapper.self, from: data)
+            return decode.data.nickname
+        } catch {
+            print("디코딩 실패")
+            throw NetworkError.responseDecodingError
+        }
+    }
+    
+    private func configureHTTPError(errorCode: Int) -> Error {
+        return NetworkError(rawValue: errorCode) ?? NetworkError.unknownError
     }
     
 }
