@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6CA18CFA2DDCE5C1002469B8 /* PHTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 6CA18CF92DDCE5C1002469B8 /* PHTextEditor */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		6C4022422DD8401B0046A153 /* SOPT36_Practice_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOPT36_Practice_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA18CFA2DDCE5C1002469B8 /* PHTextEditor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = SOPT36_Practice_SwiftUI;
 			packageProductDependencies = (
+				6CA18CF92DDCE5C1002469B8 /* PHTextEditor */,
 			);
 			productName = SOPT36_Practice_SwiftUI;
 			productReference = 6C4022422DD8401B0046A153 /* SOPT36_Practice_SwiftUI.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 6C4022392DD8401B0046A153;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6CA18CF82DDCE5C1002469B8 /* XCRemoteSwiftPackageReference "PHTextEditor" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6C4022432DD8401B0046A153 /* Products */;
 			projectDirPath = "";
@@ -324,6 +333,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6CA18CF82DDCE5C1002469B8 /* XCRemoteSwiftPackageReference "PHTextEditor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneTen19/PHTextEditor.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6CA18CF92DDCE5C1002469B8 /* PHTextEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6CA18CF82DDCE5C1002469B8 /* XCRemoteSwiftPackageReference "PHTextEditor" */;
+			productName = PHTextEditor;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6C40223A2DD8401B0046A153 /* Project object */;
 }
