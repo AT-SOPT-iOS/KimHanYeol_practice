@@ -1,0 +1,15 @@
+{
+  "originHash" : "6b6ef28fad8a144e049ba36db2f42727d68f3c3a245b9d7013234277d2930e9c",
+  "pins" : [
+    {
+      "identity" : "phtexteditor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/OneTen19/PHTextEditor.git",
+      "state" : {
+        "revision" : "96d43085d930adf8bc24c3cd4c5dc293f39a71d4",
+        "version" : "2.1.3"
+      }
+    }
+  ],
+  "version" : 3
+}
